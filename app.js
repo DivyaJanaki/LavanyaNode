@@ -36,15 +36,14 @@ app.get('/Shop',(req,res) => {
     }
 })
 
-
-// restaurant wrt to id
-// app.get('/restaurant/:id',(req,res) => {
-//     var id = parseInt(req.params.id);
-//     db.collection('restaurants').find({"restaurant_id":id}).toArray((err,result) =>{
-//         if(err) throw err;
-//         res.send(result) 
-//     })
-// })
+// product wrt to id
+app.get('/product/:id',(req,res) => {
+    var pid = Number(req.params.id);
+    db.collection('products').find({"id":pid}).toArray((err,result) =>{
+        if(err) throw err;
+        res.send(result) 
+    })
+})
 
 // query params example
 /// wrt to city_name
